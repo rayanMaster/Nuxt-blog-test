@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Cairo';
+    src: url(../fonts/Cairo/cairo.ttf) format('ttf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-primary: #2B3769;
+        --color-secondary-blue: #6c7d83;
+        --color-text-light: #E0E0E0
+    }
+}
+
+.text-card{
+    @apply relative z-[1] block rounded-lg bg-text-light opacity-95 px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-text-light dark:shadow-black/20 tablet:px-12
+}
+
+.button-primary{
+    @apply bg-primary-blue
+}
+
+.button-secondary{
+    @apply bg-secondary-blue
+}
+
+.bg-light{
+    @apply bg-text-light
+}
+
+.checkbox{
+    @apply relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem]
+    border-[0.125rem] border-solid border-secondary-blue outline-none before:pointer-events-none before:absolute
+    before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0
+    before:content-[''] checked:border-primary-blue checked:bg-primary-blue
+    checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block
+    checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem]
+    checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white
+    checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04]
+    hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100
+    focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s]
+    focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem]
+    focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100
+    checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem]
+    checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45
+    checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0
+    checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white
+    checked:focus:after:bg-transparent rtl:float-right dark:border-neutral-400 dark:checked:border-primary-blue
+    dark:checked:bg-primary-blue
+
+}
+
+.loader{
+    @apply animate-spin border-2 border-primary-blue rounded-full border-t-0 border-r-0 h-[60px] w-[60px]
+}
